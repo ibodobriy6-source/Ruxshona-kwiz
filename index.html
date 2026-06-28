@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruxshonam uchun maxsus 💌</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Фоновые летающие сердечки -->
+    <div id="bg-hearts-container"></div>
+
+    <!-- Страница 1: Главная -->
+    <div class="page active" id="page-1">
+        <div class="quiz-container main-card">
+            <div class="steps-indicator">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <h1 class="main-title">Ruxshonam uchun maxsus 💌</h1>
+            <h2 class="sub-title">KICHKINA KVIZ</h2>
+            <p class="description">br nechta savolga javob ber lekin ixtiyot bol br xil variantlar injiqro😁</p>
+            <button class="btn btn-gradient btn-start" onclick="nextPage(1, 2)">Boshladik ✨</button>
+        </div>
+    </div>
+
+    <!-- Страница 2: Вопрос 1 -->
+    <div class="page" id="page-2">
+        <div class="quiz-container">
+            <div class="steps-indicator">
+                <span class="dot active"></span>
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <h2 class="question">Sewanba kuni vohtin bormi ?</h2>
+            <div class="divider-heart">♡</div>
+            <div class="options-container">
+                <button class="option-btn correct" onclick="checkAnswer(1, true, this)">
+                    <span class="check-icon">✓</span> Sz uchun har doim❤️
+                </button>
+                <button class="option-btn" onclick="checkAnswer(1, false, this)">Blmasam🤔</button>
+                <button class="option-btn" onclick="checkAnswer(1, false, this)">Yo iwlarim bor🙃</button>
+            </div>
+            <div class="error-message" id="error-1"></div>
+        </div>
+    </div>
+
+    <!-- Страница 3: Вопрос 2 -->
+    <div class="page" id="page-3">
+        <div class="quiz-container">
+            <div class="steps-indicator">
+                <span class="dot active"></span>
+                <span class="dot active"></span>
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <div class="congrats-text">Malades shirinim blardim ha diyiwini❤️</div>
+            <h2 class="question">Brga qatga boramiz?</h2>
+            <div class="divider-heart">♡</div>
+            <div class="options-container">
+                <button class="option-btn correct" onclick="checkAnswer(2, true, this)">
+                    <span class="check-icon">✓</span> Park keyin ovqatlanish😋
+                </button>
+                <button class="option-btn" onclick="checkAnswer(2, false, this)">Yo Uyga ketamiz😒</button>
+                <button class="option-btn" onclick="checkAnswer(2, false, this)">Hech qatga, ishliman💼</button>
+            </div>
+            <div class="error-message" id="error-2"></div>
+        </div>
+    </div>
+
+    <!-- Страница 4: Вопрос 3 -->
+    <div class="page" id="page-4">
+        <div class="quiz-container">
+            <div class="steps-indicator">
+                <span class="dot active"></span>
+                <span class="dot active"></span>
+                <span class="dot active"></span>
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <h2 class="question">Nma korib ketamiz brga?</h2>
+            <div class="divider-heart">♡</div>
+            <div class="options-container">
+                <button class="option-btn correct" onclick="checkAnswer(3, true, this)">
+                    <span class="check-icon">✓</span> Elemental multik🎬
+                </button>
+                <button class="option-btn" onclick="checkAnswer(3, false, this)">Kino🍿</button>
+                <button class="option-btn" onclick="checkAnswer(3, false, this)">Ujas kino😱</button>
+            </div>
+            <div class="error-message" id="error-3"></div>
+        </div>
+    </div>
+
+    <!-- Страница 5: Вопрос 4 -->
+    <div class="page" id="page-5">
+        <div class="quiz-container">
+            <div class="steps-indicator">
+                <span class="dot active"></span>
+                <span class="dot active"></span>
+                <span class="dot active"></span>
+                <span class="dot active"></span>
+                <span class="dot active"></span>
+                <span class="dot"></span>
+            </div>
+            <h2 class="question">Shu kunini manga bagiwlisanmi?</h2>
+            <div class="divider-heart">♡</div>
+            <div class="options-container">
+                <button class="option-btn correct" onclick="checkAnswer(4, true, this)">
+                    <span class="check-icon">✓</span> Ha albatta❤️
+                </button>
+                <button class="option-btn" onclick="checkAnswer(4, false, this)">Oylab koriw kerede🤔</button>
+            </div>
+            <div class="error-message" id="error-4"></div>
+        </div>
+    </div>
+
+    <!-- Страница 6: Вопрос 5 (С фотографией как на макете) -->
+    <div class="page" id="page-6">
+        <div class="quiz-container">
+            <div class="steps-indicator">
+                <span class="dot active"></span>
+                <span class="dot active"></span>
+                <span class="dot active"></span>
+                <span class="dot active"></span>
+                <span class="dot active"></span>
+                <span class="dot active"></span>
+            </div>
+            <h2 class="question">Hayotim quvonchi sani sevaman❤️</h2>
+            
+            <!-- Круглое фото девушки -->
+            <div class="photo-container">
+                <img src="photo.jpg" alt="Ruxshona" class="avatar-photo" onerror="this.style.display='none'; document.getElementById('avatar-fallback').style.display='flex';">
+                <div id="avatar-fallback" class="avatar-fallback"><span>❤️</span></div>
+            </div>
+
+            <div class="options-container">
+                <button class="option-btn correct" onclick="checkAnswer(5, true, this)">
+                    <span class="check-icon">✓</span> Szi yaxshi koraman judda qattiq❤️
+                </button>
+                <button class="option-btn" onclick="checkAnswer(5, false, this)">Manam❤️</button>
+                <button class="option-btn" onclick="checkAnswer(5, false, this)">Man yomon koraman😒</button>
+            </div>
+            <div class="error-message" id="error-5"></div>
+        </div>
+    </div>
+
+    <!-- Страница 7: Финал -->
+    <div class="page" id="page-7">
+        <div class="quiz-container final-card">
+            <div class="final-steps">
+                <span class="final-dot"></span>
+                <span class="final-dot"></span>
+                <span class="final-dot"></span>
+                <span class="final-dot"></span>
+                <span class="final-dot"></span>
+                <span class="final-dot"></span>
+            </div>
+            <p class="final-congrats">Malades blardim tori tanlov qiliwini❤️</p>
+            <p class="final-text">Har doimgidanam chiroyliro bolib tayorlanb iwdan vohtliro cqb tur qoganini ozim hal qlaman!</p>
+            <p class="final-wait">Kutaman❤️</p>
+            <div class="divider-heart">♡</div>
+            <p class="final-signature">Szni taklif qvoti - sevgi bn Ibodullo😊</p>
+            
+            <button class="btn btn-gradient btn-restart" onclick="restartQuiz()">Yana br bor otish ↻</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
